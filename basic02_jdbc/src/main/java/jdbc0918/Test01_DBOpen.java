@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 public class Test01_DBOpen {
 
 	public static void main(String[] args) {
-
+		
 		//Oracle Database XE 18c 연결
 		
 		try {
