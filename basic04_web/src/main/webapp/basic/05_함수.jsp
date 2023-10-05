@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <title>05_함수.jsp</title>
   <link rel="stylesheet" href="../css/reset.css">
-  <script src="../js/jquery-3.6.4.min.js"></script>
+  <script src="../js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
