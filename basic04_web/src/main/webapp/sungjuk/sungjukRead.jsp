@@ -9,13 +9,16 @@
 <head>
 <meta charset="UTF-8">
 <title>sungjukRead.jsp</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 	<h3>* 성적 상세보기 *</h3>
 	<p>
-		<a href="sungjukForm.jsp">[성적쓰기]</a>
-		<a href="sungjukList.jsp">[성적목록]</a>
+		<a href="sungjukForm.jsp" class="btn btn-default">[성적쓰기]</a>
+		<a href="sungjukList.jsp" class="btn btn-default">[성적목록]</a>
 	</p>
 <%
 	//예)sungjukRead.jsp?sno=43
@@ -45,7 +48,7 @@
 		rs = pstmt.executeQuery();
 		if(rs.next()){
 %>
-		<table>
+		<table class="table table-bordered">
 		<tr>
 			<th>이름</th>
 			<td><%=rs.getString("uname")%></td>
@@ -89,10 +92,9 @@
 			<td><%=rs.getString("wdate")%></td>
 		</tr>
 		</table>
-		<br><br>
-		<a href="sungjukUpdate.jsp?sno=<%=sno%>">[수정]</a>
+		<a href="sungjukUpdate.jsp?sno=<%=sno%>" class="btn btn-info">[수정]</a>
 		&nbsp;&nbsp;
-		<a href="sungjukDel.jsp?sno=<%=sno%>">[삭제]</a>
+		<a href="sungjukDel.jsp?sno=<%=sno%>" class="btn btn-danger">[삭제]</a>
 <%
 		}else{
 			out.println("해당 글 없음!!");

@@ -16,7 +16,7 @@
 <body>
 
 	<h3>* 성적 목록 *</h3>
-	<p><a href="sungjukForm.jsp">[성적쓰기]</a>
+	<p><a href="sungjukForm.jsp" class="btn btn-default">[성적쓰기]</a>
 	
 	<table border='1' class="table">
 	<tr class="danger">

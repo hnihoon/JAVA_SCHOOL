@@ -14,7 +14,7 @@
 	<p><a href="sungjukList.jsp">[성적목록]</a></p>
 	
 <%
-	//한글 인코딩
+		//한글 인코딩
 		request.setCharacterEncoding("UTF-8");
 
 		//사용자가 입력한 정보를 가져와서 변수에 담기
