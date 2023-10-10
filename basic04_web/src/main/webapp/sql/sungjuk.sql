@@ -65,3 +65,9 @@ select * from sungjuk where sno=?
 
 ● [형삭제] sungjukDel.jsp
 delete from sungjuk where sno=?
+
+● [행수정]
+-> sungjukUpdate.jsp : select문
+-> sungjukUpdateProc.jsp : update sungjuk
+						   set uname=?, kor=?, eng=?, mat=?, aver=?, addr=?, wdate=sysdate
+						   where sno=?
