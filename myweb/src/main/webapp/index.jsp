@@ -12,6 +12,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <!-- layout.css import -->
   <link rel="stylesheet" href="./css/layout.css">
+  <script src="./js/myscript.js"></script>
+  
   
   <script>
     function showtime(){

@@ -4,7 +4,7 @@
 <%@ include file="ssi.jsp" %>
 <%@ include file="../header.jsp" %>
 
-<!-- 본문 시작 template.jsp -->
+<!-- 본문 시작 bbsIns.jsp -->
 <%
 	//사용자가 입력 요청한 정보를 가져오기
 	String wname	=request.getParameter("wname").trim();

@@ -3,7 +3,7 @@
 
 <%@ include file="../header.jsp" %>
 
-<!-- 본문 시작 template.jsp -->
+<!-- 본문 시작 bbsForm.jsp -->
 <h3>* 새글쓰기 *</h3>
 <p><a href="bbsList.jsp">[글목록]</a></p>
 <!-- 본문 끝 -->
