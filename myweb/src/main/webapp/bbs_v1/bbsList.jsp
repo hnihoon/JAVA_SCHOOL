@@ -68,30 +68,13 @@
 		}
 		
 		//글갯수
-		int totalRecord = dao.count2(col, word); 
+		int totalRecord = dao.count();
 		out.println("<tr>");
 		out.println("	<td colspan='4' style='text-align:center;'>");
 		out.println("		글갯수:<strong> " + totalRecord + " </strong>");
 		out.println("	</td>");
 		out.println("</tr>");
-%>
-		<!-- 검색 시작 -->
-		<tr>
-			<td colspan='4' style="text-align:center; height: 50px;">
-				<form action="bbsList.jsp" onsubmit="return searchCheck()"><!-- myscript.js함수 작성함 -->
-					<select name="col">
-						<option value="subject_content">제목+내용
-						<option value="subject">제목
-						<option value="content">내용
-						<option value="wname">작성자
-					</select>
-					<input type="text" name="word" id="word">
-					<input type="submit" value="검색" class="btn btn-primary">
-				</form>
-			</td>
-		</tr>
-		<!-- 검색 끝 -->
-<%
+		
 	}
 %>
 </tbody>
@@ -99,4 +82,3 @@
 <!-- 본문 끝 -->
 
 <%@ include file="../footer.jsp" %>
-

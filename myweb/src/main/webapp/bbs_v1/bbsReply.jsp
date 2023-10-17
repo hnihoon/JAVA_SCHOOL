@@ -3,12 +3,12 @@
 
 <%@ include file="../header.jsp" %>
 
-<!-- 본문 시작 bbsForm.jsp -->
-<h3>* 새글쓰기 *</h3>
+<!-- 본문 시작 bbsReply.jsp -->
+<h3>* 답변쓰기 *</h3>
 <p><a href="bbsList.jsp">[글목록]</a></p>
-<!-- 본문 끝 -->
-												 					<!-- myscript.js에 함수 작성함 -->
-	<form name="bbsfrm" id="bbsfrm" method="post" action="bbsIns.jsp" onsubmit="return bbsCheck()">
+<form name="bbsfrm" id="bbsfrm" method="post" action="bbsReplyProc.jsp" onsubmit="return bbsCheck()">
+<!-- 부모글 번호 -->
+	<input type="hidden" name="bbsno" value="<%=request.getParameter("bbsno")%>">
 		<table class="table">
 	<tr>
 	   <th class="success">작성자</th>
@@ -28,10 +28,11 @@
 	</tr>
 	<tr>
 	    <td colspan="2" align="center">
-	       <input type="submit" value="새글쓰기" class="btn btn-success">
+	       <input type="submit" value="답변쓰기" class="btn btn-success">
 	       <input type="reset"  value="취소" class="btn btn-danger">
 	    </td>
 	</table>
 	</form>
+<!-- 본문 끝 -->
 
 <%@ include file="../footer.jsp" %>
