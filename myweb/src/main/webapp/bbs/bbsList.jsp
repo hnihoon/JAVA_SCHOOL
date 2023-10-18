@@ -10,11 +10,7 @@
 
 <table class="table table-hover">
 <thead>
-<%
-	//한 페이지당 출력할 행의 갯수
-	int recordPerpage = 5;
-%>
-	<tr class="success">
+	<tr class="success" id="Listt">
 		<th>제목</th>
 		<th>조회수</th>
 		<th>작성자</th>

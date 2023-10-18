@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="../css/layout.css">
   <script src="../js/myscript.js"></script>
   
+  <style>
+  	#Listt th{
+  		text-align:center;
+  	}
+  </style>
+  
     <!-- 메인 카테고리 시작 -->
     <nav class="navbar navbar-default">
     <div class="container">
