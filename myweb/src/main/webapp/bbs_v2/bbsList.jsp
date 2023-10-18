@@ -10,10 +10,6 @@
 
 <table class="table table-hover">
 <thead>
-<%
-	//한 페이지당 출력할 행의 갯수
-	int recordPerpage = 5;
-%>
 	<tr class="success">
 		<th>제목</th>
 		<th>조회수</th>
@@ -24,11 +20,7 @@
 <tbody>
 
 <%
-
-	//한 페이지당 출력할 행의 갯수
-	int recordPerPage = 5;
-
-	ArrayList<BbsDTO> list = dao.list3(col, word, nowPage, recordPerPage);
+	ArrayList<BbsDTO> list = dao.list2(col, word);
 	if(list==null){
 		out.println("<tr>");
 		out.println("	<td colspan='4'>");
@@ -82,18 +74,7 @@
 		out.println("		글갯수:<strong> " + totalRecord + " </strong>");
 		out.println("	</td>");
 		out.println("</tr>");
-		
-		//페이지 리스트
-		out.println("<tr>");
-		out.println("	<td colspan='4' style='text-align:center; height: 50px;'>");
-		
-		String paging = new Paging().paging3(totalRecord, nowPage, recordPerPage, col, word, "bbsList.jsp");
-		out.print(paging);
-		
-		out.println("	</td>");
-		out.println("</tr>");
 %>
-
 		<!-- 검색 시작 -->
 		<tr>
 			<td colspan='4' style="text-align:center; height: 50px;">
@@ -110,8 +91,6 @@
 			</td>
 		</tr>
 		<!-- 검색 끝 -->
-		
-		
 <%
 	}
 %>

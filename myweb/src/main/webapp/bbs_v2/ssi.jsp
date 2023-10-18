@@ -22,14 +22,4 @@
 	
 	col = Utility.checkNull(col);		//문자열값이 null이면 빈문자열로 치환
 	word = Utility.checkNull(word);
-
-//////////////////////////////////////////////////////////
-
-	//현재 페이지
-	int nowPage = 1;
-	if(request.getParameter("nowPage")!= null){
-		nowPage = Integer.parseInt(request.getParameter("nowPage"));
-	}
-	
 %>
-
