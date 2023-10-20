@@ -50,6 +50,22 @@
 	
 	//세션영역에 있는 모든값 전부 강제 삭제
 	session.invalidate();
+
+////////////////////////////////////////////////////////////////////////
+
+	//세션 시간
+	out.print("현재 세션 유지 시간 : ");
+	out.print(session.getMaxInactiveInterval());
+	out.print("초(30분)");
+	out.print("<hr>");
+	
+	session.setMaxInactiveInterval(60*10); //10분
+	
+	out.print("현재 세션 유지 시간 : ");
+	out.print(session.getMaxInactiveInterval());
+	out.print("초(10분)");
+	out.print("<hr>");
+	
 %>
 </body>
 </html>

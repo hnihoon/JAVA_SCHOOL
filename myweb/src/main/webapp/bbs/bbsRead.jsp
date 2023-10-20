@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="ssi.jsp" %>
+<%@ include file="../member/auth.jsp" %>
 <%@ include file="../header.jsp" %>
 
 <!-- 본문 시작 bbsRead.jsp -->
@@ -55,10 +56,15 @@
 	
 	<br>
 	<input type="button" value="답변쓰기" onclick="location.href='bbsReply.jsp?bbsno=<%=bbsno%>'">
-	<input type="button" value="수정" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>'"> 
+	<input type="button" value="수정" onclick="location.href='bbsUpdate.jsp?bbsno=<%=bbsno%>&col=<%=col%>&word=<%=word%>'">
+<%
+	if(s_mlevel.equals("A1")){ //회원등급 A1에 삭제버튼 노출 if시작
+%> 
 	<input type="button" value="삭제" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno%>'">
 <%
-	}
+	} //회원등급 A1에 삭제버튼 노출 if끝
+
+}
 	
 %>
 <!-- 본문 끝 -->
