@@ -52,4 +52,11 @@ select mlevel
 from member
 where id='' and passwd='' and mlevel in ('A1', 'B1', 'C1', 'D1');
 
+--아이디 중복 확인
+select count(id)
+from member
+where id=? 
 
+--회원가입
+insert into member(ID ,PASSWD ,MNAME ,TEL ,EMAIL ,ZIPCODE ,ADDRESS1 ,ADDRESS2 ,JOB ,MLEVEL ,MDATE)
+values(?, ?, ?, ?, ?, ?, ?, ?, ?, 'D1', sysdate);

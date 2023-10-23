@@ -26,7 +26,7 @@
 	 //-------------------------------------------------------------
  
  %>
- 														<!-- myscript.js -->
+ 																				<!-- myscript.js -->
 	<form name="loginfrm" id="loginfrm" method="post" action="loginProc.jsp" onsubmit="return loginCheck()">
 		<div style='width: 400px; height: 250px; margin: auto;'>
 		<table class="table">
