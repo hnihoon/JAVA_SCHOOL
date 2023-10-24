@@ -60,3 +60,20 @@ where id=?
 --회원가입
 insert into member(ID ,PASSWD ,MNAME ,TEL ,EMAIL ,ZIPCODE ,ADDRESS1 ,ADDRESS2 ,JOB ,MLEVEL ,MDATE)
 values(?, ?, ?, ?, ?, ?, ?, ?, ?, 'D1', sysdate);
+
+--아아디/비번찾기 연습용 데이터 행추가 (확인 가능한 이메일 주소 정확히 적어주세요)
+insert into member(id, passwd, mname, tel, email, zipcode, address1, address2, job, mlevel, mdate)
+values('kimkim', '12341234', '김연아', '123-4567', 'gmrtkcjsfl@naver.com'
+		, '12345', '서울시 종로구 인사동', '역삼빌딩8층', 'A02', 'D1', sysdate );
+		
+-- 아아디/비번찾기
+
+1) 이름과 이메일 일치하면
+select id
+from member
+where mname=? and email=?
+
+2)
+update member
+set passwd=?
+where mname=? and email=?

@@ -156,6 +156,26 @@
 	return true;
  }
  
+  function idemailCheck(){
+	 let mname = document.getElementById("mname").value;
+	 if(mname.length < 2){
+		alert("이름을 두글자 이상 작성해주세요.");
+		document.getElementById("mname").focus();
+		return false;
+	}
+	
+	 let email = document.getElementById("email").value;
+	 email=email.trim();
+	 if(email.length<5){
+		alert("이메일 주소는 5글자 이상 작성해주세요");
+		document.getElementById("email").focus();
+		return false;
+	}
+	return true;
+	
+  }
+ 
+ 
  
  
  

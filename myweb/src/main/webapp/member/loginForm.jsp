@@ -5,7 +5,8 @@
 <%@ include file="../header.jsp" %>
 
 <!-- 본문 시작 template.jsp -->
-<h3>* 로 그 인 *</h3>				
+<h3>* 로 그 인 *</h3>		
+<br>		
 
  <% 
  // 로그인을 하지 않았다면

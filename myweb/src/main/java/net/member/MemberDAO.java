@@ -126,4 +126,82 @@ public class MemberDAO { //Data Access Object
 		}
 		return cnt;
 	}
+	
+	public String idemailCheck(MemberDTO dto) {
+		String id=null;
+		try {
+			con=dbopen.getConnection();
+			
+			sql=new StringBuilder();
+			sql.append(" select id " );
+			sql.append(" from member " );
+			sql.append(" where mname=? and email=?");
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, dto.getMname());
+			pstmt.setString(2, dto.getEmail());
+			
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				id=rs.getString("id");
+			}
+	
+		} catch(Exception e) {
+			System.out.println("로그인실패 : " + e);
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		return id;
+	}
+	
+	public String getRandomString(int length) {
+	    String str = "";
+	    for (int i = 0; i < length; i++)
+	    {
+	        int category = ((int) (Math.random() * 100) % 3);
+	        // 랜덤 숫자
+	        if (category == 0)
+	        {
+	            int num = (int) (Math.random() * 10);
+	            str = str.concat(String.valueOf(num));
+	        } // 랜덤 소문자
+	        else if (category == 1)
+	        {
+	            int startnum = 97;
+	            int num = ((int) (Math.random() * 100) % 26);
+	            char character = (char)(startnum + num);
+	            str = str.concat(String.valueOf(character));
+	        } // 랜덤 대문자
+	        else
+	        {
+	            int startnum = 65;
+	            int num = ((int) (Math.random() * 100) % 26);
+	            char character = (char)(startnum + num);
+	            str = str.concat(String.valueOf(character));
+	        }
+	    }
+	    return str;
+	}
+	
+	public void incrementCnt(String random, String id) {
+		
+		try {
+			con=dbopen.getConnection();
+			
+			StringBuffer sql = new StringBuffer();
+			sql.append(" update MEMBER " );
+			sql.append(" set passwd=? ");
+			sql.append(" where id=? " );
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, random);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			System.out.println("상세보기실패 : " + e);
+		} finally {
+			DBClose.close(con, pstmt);
+		}
+	}
 }

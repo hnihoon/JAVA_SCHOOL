@@ -15,10 +15,13 @@
   <!-- layout.css import -->
   <link rel="stylesheet" href="../css/layout.css">
   <script src="../js/myscript.js"></script>
-  
   <style>
   	#Listt th{
   		text-align:center;
+  	}
+  	#iwb{
+  		width: 95px;
+  		height: 95px;
   	}
   </style>
   
