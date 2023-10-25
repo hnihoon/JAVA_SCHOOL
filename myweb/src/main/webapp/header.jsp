@@ -23,6 +23,15 @@
   		width: 95px;
   		height: 95px;
   	}
+  	
+  	#setiw{
+  		margin: 0px 12px 0px 0px;
+  		padding: 7px 9px;
+  	}
+  	
+  	#iwreset{
+  		padding: 7px 32px;
+  	}
   </style>
   
     <!-- 메인 카테고리 시작 -->

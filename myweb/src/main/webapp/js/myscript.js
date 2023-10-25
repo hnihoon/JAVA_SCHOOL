@@ -156,7 +156,7 @@
 	return true;
  }
  
-  function idemailCheck(){
+function idemailCheck(){
 	 let mname = document.getElementById("mname").value;
 	 if(mname.length < 2){
 		alert("이름을 두글자 이상 작성해주세요.");
@@ -172,8 +172,10 @@
 		return false;
 	}
 	return true;
-	
   }
+  
+
+ 
  
  
  
