@@ -156,7 +156,7 @@
 	return true;
  }
  
-function idemailCheck(){
+ function idemailCheck(){
 	 let mname = document.getElementById("mname").value;
 	 if(mname.length < 2){
 		alert("이름을 두글자 이상 작성해주세요.");
@@ -173,25 +173,52 @@ function idemailCheck(){
 	}
 	return true;
   }
-  
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+  function pdcCheck(){ //포토 갤러리 유효성 검사
+	//1) 이름
+	let wname = document.getElementById("wname").value;
+	wname=wname.trim();
+	if(wname.length < 2){
+		alert("이름을 2글자 이상 작성해주세요.");
+		document.getElementById("wname").focus();
+		return false;
+	}
+	
+	//2) 제목
+	let subject = document.getElementById("subject").value;
+	subject=subject.trim();
+	if(subject.length < 5) {
+		alert("제목은 5글자 이상 작성해주세요")
+		document.getElementById("subject").focus();
+		return false;
+	}
+
+	//3) 비밀번호 4~15글자 이내인지?
+	let passwd = document.getElementById("passwd").value;
+	passwd = passwd.trim();
+	if(passwd.length < 4 && passwd.length > 15) {
+		alert("비밀번호는 4~15글자 이내로 작성해주세요")
+		document.getElementById("passwd").focus();
+		return false;
+	}
+
+	//4) 첨부파일
+	//->파일의 확장명이 이미지 파일(png,jpg,gif)인지 확인하시오
+	let filename = document.getElementById("filename").value;
+	filename=filename.trim();
+	if(filename.length==0){
+		alert("첨부 파일 선택하세요~");
+		return false;
+	} else{
+		let dot=filename.lastIndexOf("."); //filename변수값에서 마지막 .의 순서값
+		let ext=filename.substr(dot+1)	//확장명 : 마지막 . 이후 문자열 자르기
+		ext=ext.toLowerCase();			//대문자를 소문자로 변환
+
+		if(ext=="png" || ext=="jpg" || ext=="gif" || ext=="jpeg"){
+			return true;
+		} else{
+			alert("이미지 파일만 업로드 가능합니다.");
+			return false;
+		}
+	}
+}

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>index2.jsp</title>
+  <title>myWeb.jsp</title>
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,6 +31,10 @@
   	
   	#iwreset{
   		padding: 7px 32px;
+  	}
+  	
+  	#pdst th {
+  		text-align: center;
   	}
   </style>
   

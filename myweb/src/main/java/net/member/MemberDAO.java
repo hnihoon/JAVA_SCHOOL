@@ -3,6 +3,7 @@ package net.member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
 
@@ -13,6 +14,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import net.bbs.BbsDTO;
 import net.utility.DBClose;
 import net.utility.DBOpen;
 import net.utility.MyAuthenticator;
@@ -317,5 +319,43 @@ public class MemberDAO { //Data Access Object
 }
 
 /////////////////////////강사님이 작성해주신 이메일 관련 코드 끝 //////////////////////////////
+	
+/////////////////////////////회원정보수정 관련 코드 시작 //////////////////////////////////
+	
+	public MemberDTO read(String id) {
+		MemberDTO dto = null;
+		try {
+			con = dbopen.getConnection();
+			
+			sql=new StringBuilder();
+			sql.append(" select ID ,PASSWD ,MNAME ,TEL ,EMAIL ,ZIPCODE ,ADDRESS1 ,ADDRESS2 ,JOB ,MLEVEL ,MDATE  " );
+			sql.append(" from member " );
+			sql.append(" where id=? " );
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, id);
+			
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				dto=new MemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setMname(rs.getString("mname"));
+				dto.setTel(rs.getString("tel"));
+				dto.setEmail(rs.getString("email"));
+				dto.setZipcode(rs.getString("zipcode"));
+				dto.setAddress1(rs.getString("address1"));
+				dto.setAddress2(rs.getString("address2"));
+				dto.setJob(rs.getString("job"));
+				dto.setMlevel(rs.getString("mlevel"));
+				dto.setMdate(rs.getString("mdate"));
+			}
+			
+		} catch(Exception e) {
+			System.out.println("상세보기실패:" + e);
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		return dto;
+	}
 	
 }
