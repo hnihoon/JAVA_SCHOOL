@@ -60,7 +60,7 @@
 <%
 	if(s_mlevel.equals("A1")){ //회원등급 A1에 삭제버튼 노출 if시작
 %> 
-	<input type="button" value="삭제" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno%>'">
+	<input type="button" value="삭제" onclick="location.href='bbsDel.jsp?bbsno=<%=bbsno%>'" >
 <%
 	} //회원등급 A1에 삭제버튼 노출 if끝
 

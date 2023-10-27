@@ -38,6 +38,7 @@
         document.getElementById("passwd").focus();
         return false;
     }//if end
+    
 
 	return true; //onsubmit이벤트에서 서버로 전송
     
@@ -196,7 +197,7 @@
 	//3) 비밀번호 4~15글자 이내인지?
 	let passwd = document.getElementById("passwd").value;
 	passwd = passwd.trim();
-	if(passwd.length < 4 && passwd.length > 15) {
+	if(passwd.length < 4 || passwd.length > 15) {
 		alert("비밀번호는 4~15글자 이내로 작성해주세요")
 		document.getElementById("passwd").focus();
 		return false;
@@ -222,3 +223,40 @@
 		}
 	}
 }
+ 	function pwCheck2() {
+		let passwd = document.getElementById("passwd").value;
+		passwd = passwd.trim();
+		if(passwd.length < 4 || passwd.length > 15) {
+		alert("비밀번호는 4~15글자 이내로 작성해주세요");
+		document.getElementById("passwd").focus();
+		return false;
+	}
+		
+		 let message="첨부 파일도 삭제됩니다\n계속 진행할까요?";
+	    if(confirm(message)){
+			return true;	
+		} else{
+			return false;
+		}
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 

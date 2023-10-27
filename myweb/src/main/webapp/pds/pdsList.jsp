@@ -30,7 +30,7 @@
 				dto=list.get(i);
 %>
 			<tr>
-				<td><%=dto.getSubject()%></td>
+				<td><a href="pdsRead.jsp?pdsno=<%=dto.getPdsno()%>"><%=dto.getSubject()%></a></td>
 				<td><img src="../storage/<%=dto.getFilename()%>" width="50" height="40"></td>
 				<td><%=dto.getReadcnt() %></td>
 				<td><%=dto.getWname()%></td>
