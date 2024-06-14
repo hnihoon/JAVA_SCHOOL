@@ -9,7 +9,7 @@ public class MyAuthenticator extends Authenticator{
 	private PasswordAuthentication pa;
 	
 	public MyAuthenticator() {
-		pa = new PasswordAuthentication("soldesk@pretyimo.cafe24.com", "soldesk6901");
+		pa = new PasswordAuthentication("XXX@XXX.cafe24.com", "XXX");
 	}
 	
 	protected PasswordAuthentication getPasswordAuthentication() {
